@@ -110,8 +110,7 @@ allInputs.forEach(element => {
         
         outputrevyear.innerText = formatter.format(totalCalc);
         outputrevmonth.innerText = formatter.format(totalCalc/12)
-//        outputrevmonth.innerText = Number((totalCalc/12).toFixed(2));
-
+ 
         var totalCalcPossible = (t1 * 50 * sa)+ (t2 * 60 * sa) + (t3 * 12 * sa) + (t4 * 10 * sa)+(t5 * 11 * sa) + (t6 * 12 * sa)+ (t7 * 40 * sa)
 
         outputrevyearFull.innerText = formatter.format(totalCalcPossible);
@@ -124,17 +123,4 @@ allInputs.forEach(element => {
 
     })
 })
-
-
-
-
-/*
-Payment tier	Paid Ammount Per Closing	Personal Sponshorshps
-1	50	1
-2	60	2
-3	12	3
-4	10	5
-5	11	7
-6	12	10
-7	40	15
-*/
+ 
