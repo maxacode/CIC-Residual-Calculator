@@ -4,6 +4,9 @@
 document.addEventListener('DOMContentLoaded', getInputValues);
 
 var outputrevyear = document.getElementById('outputrevyear');
+var outputrevmonth = document.getElementById('outputrevmonth');
+
+
 var outputrevyearFull = document.getElementById('outputrevyearFull');
 var totalagents = document.getElementById('totalagents');
 var outputtotalmissed = document.getElementById('outputtotalmissed');
@@ -95,14 +98,27 @@ allInputs.forEach(element => {
 
         //updating output values
         //update for total inpcome/year
+        // Create our number formatter.
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
         
-        outputrevyear.innerText = totalCalc;
+            // These options are needed to round to whole numbers if that's what you want.
+            minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+            maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
+        });
+        
+        outputrevyear.innerText = formatter.format(totalCalc);
+        outputrevmonth.innerText = formatter.format(totalCalc/12)
+//        outputrevmonth.innerText = Number((totalCalc/12).toFixed(2));
 
         var totalCalcPossible = (t1 * 50 * sa)+ (t2 * 60 * sa) + (t3 * 12 * sa) + (t4 * 10 * sa)+(t5 * 11 * sa) + (t6 * 12 * sa)+ (t7 * 40 * sa)
 
-        outputrevyearFull.innerText = totalCalcPossible;
+        outputrevyearFull.innerText = formatter.format(totalCalcPossible);
+        outputrevyearFullmonth.innerText = formatter.format(totalCalcPossible/12);
 
-        outputtotalmissed.innerText = totalCalcPossible - totalCalc
+        outputtotalmissed.innerText = formatter.format(totalCalcPossible - totalCalc)
+        outputtotalmissedmonth.innerText = formatter.format((totalCalcPossible - totalCalc)/12);
 
         console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
 
