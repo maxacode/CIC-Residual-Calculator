@@ -25,14 +25,14 @@ function getInputValues() {
 
 };
 
-console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
+//console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
 
 // All inputs by the class name: form-control.
 var allInputs = document.querySelectorAll(".form-control");
 // taking all changes on all the inputs. 
 allInputs.forEach(element => {
     element.addEventListener('change', (e) => {
-        console.log(e.target.id +  " Changed")
+      //  console.log(e.target.id +  " Changed")
         //get all updated values. 
         getInputValues();
         var t1 = personally.value;
@@ -51,7 +51,7 @@ allInputs.forEach(element => {
         // ((A3*50*H3)), 
         if (t1 >= 1) {
             totalCalc += (t1 * 50 * sa);
-            console.log("t1 ran" + totalCalc);
+           // console.log("t1 ran" + totalCalc);
 
         } 
         // IF(A3=2,
@@ -59,7 +59,7 @@ allInputs.forEach(element => {
        
         if (t1 >= 2) {
             totalCalc += (t2 * 60 * sa);
-            console.log("t2 ran" + totalCalc);
+           // console.log("t2 ran" + totalCalc);
         };
     
         // IF(A3<=3,
@@ -67,33 +67,33 @@ allInputs.forEach(element => {
 
         if (t1 >= 3) {
             totalCalc += (t3 * 12 * sa);
-            console.log("t3 ran" + totalCalc);
+           // console.log("t3 ran" + totalCalc);
         };
         // IF(A3<=5,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3)),
         if (t1 >= 5) {
             totalCalc += (t4 * 10 * sa);
-            console.log("t4 ran" + totalCalc);
+          //  console.log("t4 ran" + totalCalc);
         };
 
         // IF(A3<=7,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3)),
         if (t1 >= 7) {
             totalCalc += (t5 * 11 * sa);
-            console.log("t5 ran" + totalCalc);
+          //  console.log("t5 ran" + totalCalc);
         };
 
         // IF(A3<=10,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)),
         if (t1 >= 10) {
             totalCalc += (t6 * 12 * sa);
-            console.log("t4 ran" + totalCalc);
+           // console.log("t4 ran" + totalCalc);
         };
         // IF(A3>=15,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)) + (G3*40*H3))))))))
         if (t1 >= 15) {
             totalCalc += (t7 * 40 * sa);
-            console.log("t4 ran" + totalCalc);
+            //console.log("t4 ran" + totalCalc);
         };
 
         //updating output values
@@ -120,7 +120,7 @@ allInputs.forEach(element => {
         outputtotalmissed.innerText = formatter.format(totalCalcPossible - totalCalc)
         outputtotalmissedmonth.innerText = formatter.format((totalCalcPossible - totalCalc)/12);
 
-        console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
+        //console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
 
     })
 })
