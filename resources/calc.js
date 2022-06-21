@@ -1,4 +1,3 @@
-
 //console.log(personally, ticketNum, tier2, tier3, tier4, sales, revenue);
 
 document.addEventListener('DOMContentLoaded', getInputValues);
@@ -25,14 +24,57 @@ function getInputValues() {
 
 };
 
+// pie chart
+
+
+
+var labels = [
+    'Revenue/Year Earned',
+    'Revenue/Year Missed',
+];
+var data = {
+    labels: labels,
+    datasets: [{
+        label: 'Revenue/Year Missed',
+        backgroundColor: [
+            '#0f9d58',
+            '#3c4043',
+        ],
+        borderColor: '#aaaa',
+        data: [100, 0],
+        hoverOffset: 1
+    }]
+};
+
+var config = {
+    type: 'pie',
+    data: data,
+    options: {
+        align: 'center',
+        radius: 200,
+    }
+};
+
+var myChart = new Chart(
+    document.getElementById('myChart'),
+    config,
+
+);
+
 //console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
+
+//
+// <div>
+// <canvas id="myChart" width="50" height="50"></canvas>
+
+// </div>
 
 // All inputs by the class name: form-control.
 var allInputs = document.querySelectorAll(".form-control");
 // taking all changes on all the inputs. 
 allInputs.forEach(element => {
     element.addEventListener('change', (e) => {
-      //  console.log(e.target.id +  " Changed")
+        //  console.log(e.target.id +  " Changed")
         //get all updated values. 
         getInputValues();
         var t1 = personally.value;
@@ -43,51 +85,51 @@ allInputs.forEach(element => {
         var t6 = tier6.value;
         var t7 = tier7.value;
         var sa = sales.value;
-        
-        var totalCalc = 0 
+
+        var totalCalc = 0
         totalagents.innerText = Number(t1) + Number(t2) + Number(t3) + Number(t4) + Number(t5) + Number(t6) + Number(t7);
 
         // =IF(A3=1,
         // ((A3*50*H3)), 
         if (t1 >= 1) {
             totalCalc += (t1 * 50 * sa);
-           // console.log("t1 ran" + totalCalc);
+            // console.log("t1 ran" + totalCalc);
 
-        } 
+        }
         // IF(A3=2,
         // ((A3*50*H3) + (B3*60*H3)), 
-       
+
         if (t1 >= 2) {
             totalCalc += (t2 * 60 * sa);
-           // console.log("t2 ran" + totalCalc);
+            // console.log("t2 ran" + totalCalc);
         };
-    
+
         // IF(A3<=3,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3)),
 
         if (t1 >= 3) {
             totalCalc += (t3 * 12 * sa);
-           // console.log("t3 ran" + totalCalc);
+            // console.log("t3 ran" + totalCalc);
         };
         // IF(A3<=5,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3)),
         if (t1 >= 5) {
             totalCalc += (t4 * 10 * sa);
-          //  console.log("t4 ran" + totalCalc);
+            //  console.log("t4 ran" + totalCalc);
         };
 
         // IF(A3<=7,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3)),
         if (t1 >= 7) {
             totalCalc += (t5 * 11 * sa);
-          //  console.log("t5 ran" + totalCalc);
+            //  console.log("t5 ran" + totalCalc);
         };
 
         // IF(A3<=10,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)),
         if (t1 >= 10) {
             totalCalc += (t6 * 12 * sa);
-           // console.log("t4 ran" + totalCalc);
+            // console.log("t4 ran" + totalCalc);
         };
         // IF(A3>=15,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)) + (G3*40*H3))))))))
@@ -102,25 +144,53 @@ allInputs.forEach(element => {
         var formatter = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD',
-        
+
             // These options are needed to round to whole numbers if that's what you want.
             minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
             maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
         });
-        
+
         outputrevyear.innerText = formatter.format(totalCalc);
-        outputrevmonth.innerText = formatter.format(totalCalc/12)
- 
-        var totalCalcPossible = (t1 * 50 * sa)+ (t2 * 60 * sa) + (t3 * 12 * sa) + (t4 * 10 * sa)+(t5 * 11 * sa) + (t6 * 12 * sa)+ (t7 * 40 * sa)
+        outputrevmonth.innerText = formatter.format(totalCalc / 12)
+
+        var totalCalcPossible = (t1 * 50 * sa) + (t2 * 60 * sa) + (t3 * 12 * sa) + (t4 * 10 * sa) + (t5 * 11 * sa) + (t6 * 12 * sa) + (t7 * 40 * sa)
 
         outputrevyearFull.innerText = formatter.format(totalCalcPossible);
-        outputrevyearFullmonth.innerText = formatter.format(totalCalcPossible/12);
+        outputrevyearFullmonth.innerText = formatter.format(totalCalcPossible / 12);
 
         outputtotalmissed.innerText = formatter.format(totalCalcPossible - totalCalc)
-        outputtotalmissedmonth.innerText = formatter.format((totalCalcPossible - totalCalc)/12);
-
+        outputtotalmissedmonth.innerText = formatter.format((totalCalcPossible - totalCalc) / 12);
+        //fff
         //console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
 
+        window.myChart.destroy();
+        var values = [totalCalc, Number(totalCalcPossible - totalCalc)];
+        console.log(values);
+        var data = {
+            labels: labels,
+            datasets: [{
+                label: 'Revenue/Year Missed',
+                backgroundColor: [
+                    '#0f9d58',
+                    '#3c4043',
+                ],
+                borderColor: '#aaaa',
+                data: values,
+                hoverOffset: 60
+            }]
+        };
+        var config = {
+            type: 'pie',
+            data: data,
+            options: {
+                align: 'center',
+                radius: 200,
+            }
+        };
+        window.myChart = new Chart(
+            document.getElementById('myChart'),
+            config,
+
+        );
     })
 })
- 
