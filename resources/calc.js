@@ -29,8 +29,8 @@ function getInputValues() {
 
 
 var labels = [
-    'Revenue/Year Earned',
-    'Revenue/Year Missed',
+    'Earned',
+    'Missed',
 ];
 var data = {
     labels: labels,
@@ -42,16 +42,36 @@ var data = {
         ],
         borderColor: '#aaaa',
         data: [100, 0],
-        hoverOffset: 1
+        hoverOffset: 20
     }]
 };
 
-var config = {
+window.config = {
     type: 'pie',
     data: data,
     options: {
-        align: 'center',
-        radius: 200,
+
+        responsive: true,
+        align: 'top',
+        radius: 170,
+        color: '',
+        plugins: {
+            tooltip: {
+                backgroundColor: "",
+                bodyFont: {
+                    size: 20
+                }
+            },
+            legend: {
+                labels: {
+                    font: {
+                        size: 20,
+                        weight: "bold"
+                    }
+                },
+                position: "bottom",
+            }
+        }
     }
 };
 
@@ -88,6 +108,7 @@ allInputs.forEach(element => {
 
         var totalCalc = 0
         totalagents.innerText = Number(t1) + Number(t2) + Number(t3) + Number(t4) + Number(t5) + Number(t6) + Number(t7);
+        totalagents.style.backgroundColor = '#aaaa';
 
         // =IF(A3=1,
         // ((A3*50*H3)), 
@@ -150,15 +171,24 @@ allInputs.forEach(element => {
             maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
         });
 
+        outputrevyear.style.backgroundColor = '#aaaa';
         outputrevyear.innerText = formatter.format(totalCalc);
+        outputrevmonth.style.backgroundColor = '#aaaa';
+
         outputrevmonth.innerText = formatter.format(totalCalc / 12)
 
         var totalCalcPossible = (t1 * 50 * sa) + (t2 * 60 * sa) + (t3 * 12 * sa) + (t4 * 10 * sa) + (t5 * 11 * sa) + (t6 * 12 * sa) + (t7 * 40 * sa)
 
+        outputrevyearFull.style.backgroundColor = '#aaaa';
         outputrevyearFull.innerText = formatter.format(totalCalcPossible);
+        outputrevyearFullmonth.style.backgroundColor = '#aaaa';
         outputrevyearFullmonth.innerText = formatter.format(totalCalcPossible / 12);
 
+        outputtotalmissed.style.backgroundColor = '#aaaa';
+
         outputtotalmissed.innerText = formatter.format(totalCalcPossible - totalCalc)
+        outputtotalmissedmonth.style.backgroundColor = '#aaaa';
+
         outputtotalmissedmonth.innerText = formatter.format((totalCalcPossible - totalCalc) / 12);
         //fff
         //console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
@@ -176,17 +206,39 @@ allInputs.forEach(element => {
                 ],
                 borderColor: '#aaaa',
                 data: values,
-                hoverOffset: 60
+                hoverOffset: 40
             }]
         };
-        var config = {
+
+        window.config = {
             type: 'pie',
             data: data,
             options: {
-                align: 'center',
-                radius: 200,
+
+                responsive: true,
+                align: 'top',
+                radius: 170,
+                color: '',
+                plugins: {
+                    tooltip: {
+                        backgroundColor: "",
+                        bodyFont: {
+                            size: 25
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 20,
+                                weight: "bold"
+                            }
+                        },
+                        position: "bottom",
+                    }
+                }
             }
         };
+
         window.myChart = new Chart(
             document.getElementById('myChart'),
             config,
