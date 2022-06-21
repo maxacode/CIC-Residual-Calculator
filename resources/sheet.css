@@ -45484,7 +45484,8 @@ html {
 }
 
 .ritz.grid-container table.waffle svg {
-    display: block
+    display: block;
+    color: #7c7c;
 }
 
 .fixed-table-container {
@@ -71657,7 +71658,7 @@ td.empty {
 
 th.row-header {
     background-color: #fff;
-    width: 45px;
+    width: 4px;
     text-align: center;
     vertical-align: middle;
     font-size: 8pt;
@@ -71686,7 +71687,9 @@ div.column-headers-background {
 
 th.column-headers-background {
     background: #eee;
-    position: relative
+    position: relative;
+    color: #7a7c7f;
+    font-size: 15px;
 }
 
 div.row-headers-background {
@@ -85994,5 +85997,6 @@ sentinel {}
 .grid-container {
     height: 100%;
     width: 100%;
-    overflow: auto
+    overflow: auto;
+    color: #7c7c;
 }
