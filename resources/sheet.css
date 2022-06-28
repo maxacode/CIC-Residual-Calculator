@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?kit=o--8Et3j0xElSo4Jk-6CSDf-JKk6yqAk1-FasceQrDHE3OD-ZsvZb3-aelJXanLPeuWpDTavRGssj3uIFprH5ccoNSSejEm3k0Nwz2Eudxm4tEXqpuHp7xhl_4VJlrRbXJL5PVIBQlS49bDopz5wCdT7DXFaap1w3okn_Ipaz50);
 a {
     text-decoration: none
 }
@@ -19273,9 +19272,7 @@ a.docs-unsupportedofficefeatureswarning-learn-more:visited {
     background-color: #f8f9fa
 }
 
-.docs-link-smartlinksuggestion-favicon {
-    padding-left: 2px
-}
+ 
 
 .docs-link-smartlinksuggestion-icon {
     display: table-cell;
@@ -19865,20 +19862,9 @@ a.docs-unsupportedofficefeatureswarning-learn-more:visited {
     letter-spacing: 0.02em
 }
 
-.docs-linkbubble-link-preview .docs-link-bubble-favicon {
-    border-radius: 2px;
-    height: 18px;
-    opacity: 1;
-    padding: 6px;
-    vertical-align: baseline;
-    width: 18px
-}
+ 
 
-.docs-linkbubble-link-preview .docs-link-bubble-favicon img {
-    border-radius: 2px;
-    height: 18px;
-    width: 18px
-}
+ 
 
 .docs-linkbubble-link-preview .docs-link-bubble-abuse-card-component:before,
 .docs-linkbubble-link-preview .docs-link-bubble-action-card-component:before,
@@ -36145,12 +36131,7 @@ div.drive-organize-dialog-bg {
     width: 90%
 }
 
-.docs-invite-favicon {
-    height: 16px;
-    margin-right: 5px;
-    vertical-align: sub;
-    width: 16px
-}
+ 
 
 .docs-invite-header {
     height: 77px;
