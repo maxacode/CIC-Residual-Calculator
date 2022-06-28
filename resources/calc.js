@@ -10,8 +10,6 @@ var outputrevyearFull = document.getElementById('outputrevyearFull');
 var totalagents = document.getElementById('totalagents');
 var outputtotalmissed = document.getElementById('outputtotalmissed');
 
-
-
 function getInputValues() {
     var personally = document.getElementById('personally');
     var sales = document.getElementById('sales');
@@ -24,9 +22,8 @@ function getInputValues() {
 
 };
 
+
 // pie chart
-
-
 
 var labels = [
     'Earned',
@@ -88,6 +85,36 @@ var myChart = new Chart(
 // <canvas id="myChart" width="50" height="50"></canvas>
 
 // </div>
+
+// all preset buttons
+var _3got3 = document.getElementById('3got3');
+var _6got6 = document.getElementById('6got6');
+var _15got15 = document.getElementById('15got15');
+
+var allButtons = document.querySelectorAll('.fa-share');
+allButtons.forEach(element => {
+    element.addEventListener('click', (e) => {
+        // personally = 3;
+        var whichButton = e.target.parentElement.id;
+        if (whichButton === '2get2') {
+            var multiplier = 2;
+        } else if (whichButton === '3get3') {
+            var multiplier = 3;
+        } else if (whichButton === '5get5') {
+            var multiplier = 5;
+        } else { window.location.reload();}
+
+        personally.value = multiplier;        
+        tier2.value = personally.value * multiplier;
+        tier3.value = tier2.value * multiplier;
+        tier4.value = tier3.value * multiplier;
+        tier5.value = tier4.value * multiplier;
+        tier6.value = tier5.value * multiplier;
+        tier7.value = tier6.value * multiplier;
+         
+        personally.dispatchEvent(new Event('change'));
+
+})});
 
 // All inputs by the class name: form-control.
 var allInputs = document.querySelectorAll(".form-control");

@@ -289,13 +289,41 @@
     
     .column-headers-background {
         width: 110px;
-    
-        
-
     }
+
+    .grid-container {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        color: #7c7c;
+    }
+    th.freezebar-origin-ltr,
+    th.freezebar-origin-rtl {
+        background-color: #fff;
+        position: relative
+    }
+    .loadButtons {
+        position: relative;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background-color: rgb(246, 241, 241);
+    
+        color: #020202;
+        font-size: 25px;
+        padding: 5px 5px 5px 5px;
+    }
+    .fa-share {
+        font-size: 23px;
+        color: #000000;
+         
+    }
+    
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
 <div class="ritz grid-container" dir="ltr">
     <table class="waffle no-grid" cellspacing="0" cellpadding="0">
         <thead>
@@ -303,7 +331,7 @@
                 
                 <th class="row-header freezebar-origin-ltr"></th>
                 <th id="1823713281C0" style="width:30px; color: #ffffff;" class="column-headers-background"></th>
-                
+
                 <th id="1823713281C1" class="column-headers-background" style="width: 1100px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
                     <h1 style="font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px;"><img src="Circle.png" alt="CIC" width="120" style="vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Residual Calculator</h1>
                     </th>
@@ -318,10 +346,27 @@
                     <div class="row-header-wrapper" style="line-height: 20px"></div>
                 </th>
                 <td class="s0"></td>
-                <td class="s1"></td>
-                <td class="s1"></td>
-                <td class="s1"></td>
-                <td class="s1"></td>
+                <td style="padding: 15px 5px 15px 5px ;" class="s1"><button class="loadButtons" border="#000000">Pre-Sets: </button></td>
+                <td class="s1">
+
+                    <button class="loadButtons" id="2get2">
+                    <i class="fas fa-share"> 2 get 2</i>
+                  </button></td>
+
+                <td  class="s1">
+
+                    <button class="loadButtons" id="3get3">
+                        <i class="fas fa-share"> 3 get 3</i>
+                      </button></td>
+
+                </td>
+                <td class="s1">
+
+                    <button class="loadButtons"id="5get5">
+                        <i class="fas fa-share"> 5 get 5</i>
+                      </button></td>
+
+                </td>
                 <td class="s1"></td>
                 <td class="s1"></td>
                 <td class="s1"></td>
@@ -368,7 +413,7 @@
                 <td class="s6" dir="ltr"><input type="number" id="tier7" class="form-control" placeholder=0></input>
                 </td>
 
-                <td class="s7" dir="ltr"><input type="number" id="sales" class="form-control" value=1></input>
+                <td class="s7" dir="ltr"><input type="number" id="sales" class="form-control" value=6></input>
                 </td>
                 </td>
 
