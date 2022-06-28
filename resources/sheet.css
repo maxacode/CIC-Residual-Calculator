@@ -46071,14 +46071,7 @@ a.waffle-blameview-image-link {
     height: 5px
 }
 
-.freezebar-origin-rtl,
-.freezebar-origin-ltr {
-    height: 23px;
-    width: 45px;
-    position: absolute;
-    top: 0px;
-    border: 1px #fff solid
-}
+
 
 .freezebar-vertical-drop-bar {
     width: 4px;
@@ -71578,7 +71571,7 @@ div.waffle-filterbox-label-icon {
     position: absolute;
     background-color: #fff;
     width: 45px;
-    z-index: 2
+     
 }
 
 .selected-column-headers-background {
@@ -71694,7 +71687,7 @@ th.column-headers-background {
 
 div.row-headers-background {
     position: absolute;
-    width: 45px;
+    
     background: #eee
 }
 
