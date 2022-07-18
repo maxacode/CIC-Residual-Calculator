@@ -313,6 +313,16 @@
         font-size: 25px;
         padding: 5px 5px 5px 5px;
     }
+    .tabs {
+        position: relative;
+        
+        z-index: 1;
+        background-color: rgb(246, 241, 241);
+    
+        color: #020202;
+        font-size: 30px;
+    }
+
     .fa-share {
         font-size: 23px;
         color: #000000;
@@ -324,8 +334,53 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<div class="ritz grid-container" dir="ltr">
+
+
+
+<div></div>
+<div class="w3-bar w3-black">
+    <button style="font-size: 30px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Residual')">Residual</button>
+    <button style="font-size: 30px" class="w3-bar-item w3-button tablink" onclick="openCity(event,'Commission')">Commission</button>
+</div>
+  
+<script>
+    function openCity(evt, tabName) {
+        var i, x, tablinks;
+        x=document.getElementsByClassName("tabsClass");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablink");
+        for (i =0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+    }
+</script>
+
+<div id='Commission' class="ritz grid-container tabsClass" dir="ltr" style="display:block">
+    <table class="waffle no-grid" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                
+                <th class="row-header freezebar-origin-ltr"></th>
+                <th id="1823713281C0" style="width:30px; background-color: #fff;" class="column-headers-background"></th>
+
+                <th id="1823713281C1" class="column-headers-background" style="width: 1100px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
+                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px;"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Commission Calculator</h1>
+                    </th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+<div id='Residual' class="ritz grid-container tabsClass" dir="ltr">
     <table class="waffle no-grid" cellspacing="0" cellpadding="0">
         <thead>
             <tr>
@@ -335,14 +390,12 @@
 
                 <th id="1823713281C1" class="column-headers-background" style="width: 1100px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
                     <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px;"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Residual Calculator</h1>
-                    </th>
-
-                 
-
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr style="height: 20px">
+
+            <tr>
                 <th id="1823713281R0" style="height: 20px;" class="row-headers-background">
                     <div class="row-header-wrapper" style="line-height: 20px"></div>
                 </th>
