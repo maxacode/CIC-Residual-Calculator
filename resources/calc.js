@@ -50,19 +50,19 @@ window.config = {
 
         responsive: true,
         align: 'top',
-        radius: 170,
+        radius: 130,
         color: '',
         plugins: {
             tooltip: {
                 backgroundColor: "",
                 bodyFont: {
-                    size: 20
+                    size: 1
                 }
             },
             legend: {
                 labels: {
                     font: {
-                        size: 20,
+                        size: 15,
                         weight: "bold"
                     }
                 },
@@ -244,7 +244,7 @@ allInputs.forEach(element => {
 
                 responsive: true,
                 align: 'top',
-                radius: 170,
+                radius: 130,
                 color: '',
                 plugins: {
                     tooltip: {
@@ -256,7 +256,7 @@ allInputs.forEach(element => {
                     legend: {
                         labels: {
                             font: {
-                                size: 20,
+                                size: 15,
                                 weight: "bold"
                             }
                         },

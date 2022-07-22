@@ -24,7 +24,7 @@
         vertical-align: bottom;
         white-space: nowrap;
         direction: ltr;
-        padding: 0px 3px 0px 3px;
+        padding: 0px 1px 0px 1px;
     }
     
     .ritz .waffle .s11 {
@@ -54,6 +54,10 @@
         word-wrap: break-word;
         direction: ltr;
         padding: 0px 3px 0px 3px;
+    }
+
+    .sblank {
+        height: 30px;
     }
     
     .ritz .waffle .s16 {
@@ -288,7 +292,7 @@
     }
     
     .column-headers-background {
-        width: 110px;
+        width: 90px;
     }
 
     .grid-container {
@@ -311,7 +315,7 @@
     
         color: #020202;
         font-size: 25px;
-        padding: 5px 5px 5px 5px;
+        padding: 2px 2px 2px 2px;
     }
     .tabs {
         position: relative;
@@ -341,8 +345,8 @@
 
 <div></div>
 <div class="w3-bar w3-black">
-    <button style="font-size: 30px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Residual')">Residual</button>
-    <button style="font-size: 30px" class="w3-bar-item w3-button tablink" onclick="openCity(event,'Commission')">Commission</button>
+    <button style="font-size: 20px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Residual')">Residual</button>
+    <button style="font-size: 20px" class="w3-bar-item w3-button tablink" onclick="openCity(event,'Commission')">Commission</button>
 </div>
   
 <script>
@@ -363,7 +367,7 @@
     }
 </script>
 
-<div id='Commission' class="ritz grid-container tabsClass" dir="ltr" style="display:block">
+<div id='Commission' class="ritz grid-container tabsClass" dir="ltr" style="display:none">
     <table class="waffle no-grid" cellspacing="0" cellpadding="0">
         <thead>
             <tr>
@@ -371,10 +375,12 @@
                 <th class="row-header freezebar-origin-ltr"></th>
                 <th id="1823713281C0" style="width:30px; background-color: #fff;" class="column-headers-background"></th>
 
-                <th id="1823713281C1" class="column-headers-background" style="width: 1100px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
-                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px;"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Commission Calculator</h1>
+                <th id="1823713281C1" class="column-headers-background" style="width: 1000px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
+                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Commission Calculator</h1>
                     </th>
             </tr>
+
+            
         </thead>
     </table>
 </div>
@@ -388,19 +394,19 @@
                 <th class="row-header freezebar-origin-ltr"></th>
                 <th id="1823713281C0" style="width:30px; background-color: #fff;" class="column-headers-background"></th>
 
-                <th id="1823713281C1" class="column-headers-background" style="width: 1100px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
-                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px;"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Residual Calculator</h1>
+                <th id="1823713281C1" class="column-headers-background" style="width: 1000px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
+                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Residual Calculator</h1>
                 </th>
             </tr>
         </thead>
         <tbody>
 
             <tr>
-                <th id="1823713281R0" style="height: 20px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 20px"></div>
+                <th id="1823713281R0" style="height: 10px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 10px"></div>
                 </th>
                 <td class="s0"></td>
-                <td style="padding: 15px 5px 15px 5px ;" class="s1"><button class="loadButtons" border="#000000">Pre-Sets: </button></td>
+                <td style="padding: 2px 2px 2px 2px ;" class="s1"><button class="loadButtons" border="#000000">Pre-Sets: </button></td>
                 <td class="s1">
 
                     <button class="loadButtons" id="2get2">
@@ -426,9 +432,9 @@
                 <td class="s1"></td>
                 <td class="s1"></td>
             </tr>
-            <tr style="height: 20px">
-                <th id="1823713281R1" style="height: 20px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 20px"></div>
+            <tr style="height: 10px">
+                <th id="1823713281R1" style="height: 10px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 10px"></div>
                 </th>
                 <td class="s2"></td>
                 <td class="s3">Personally Sponsored Associates</td>
@@ -440,9 +446,9 @@
                 <td class="s3">Tier 7 Associates</td>
                 <td class="s4" dir="ltr">Number of sales per Associate per Year</td>
             </tr>
-            <tr style="height: 20px">
-                <th id="1823713281R2" style="height: 20px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 20px"></div>
+            <tr style="height: 10px">
+                <th id="1823713281R2" style="height: 10px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 10px"></div>
                 </th>
                 <td class="s5" dir="ltr"></td>
 
@@ -472,9 +478,9 @@
                 </td>
 
             </tr>
-            <tr style="height: 20px">
-                <th id="1823713281R3" style="height: 25px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 25px"></div>
+            <tr style="height: 0px">
+                <th id="1823713281R3" style="height: 5px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 5px"></div>
                 </th>
                 <td></td>
                 <td class="s8"></td>
@@ -484,9 +490,9 @@
                 <td></td>
 
 
-                <td rowspan="5" colspan="5">
+                <td rowspan="5" colspan="3">
                     <div>
-                        <canvas id="myChart"></canvas>
+                        <canvas id="myChart" style="box-sizing: content-box;"></canvas>
 
                     </div>
                 </td>
@@ -499,11 +505,11 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr style="height: 42px">
-                <th id="1823713281R4" style="height: 42px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 42px"></div>
+            <tr style="height: 2px">
+                <th id="1823713281R4" style="height: 2px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 2px"></div>
                 </th>
-                <td class="s9"></td>
+                <td style="height: 4px;" class="s9"></td>
                 <td class="s3">Total<br>Associates</td>
                 <td class="s10" id="totalagents">0</td>
                 <td class="s11" colspan="2"></td>
@@ -512,9 +518,9 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr style="height: 51px">
-                <th id="1823713281R5" style="height: 51px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 51px"></div>
+            <tr style="height: 1px">
+                <th id="1823713281R5" style="height: 1px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 1px"></div>
                 </th>
                 <td class="s9" dir="ltr"></td>
                 <td class="s3" dir="ltr">Revenue/<br>Year</td>
@@ -536,9 +542,9 @@
 
                 <td></td>
             </tr>
-            <tr style="height: 25px">
-                <th id="1823713281R6" style="height: 20px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 20px"></div>
+            <tr style="height: 5px">
+                <th id="1823713281R6" style="height: 0px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 0px"></div>
                 </th>
                 <td class="s9" dir="ltr"></td>
                 <td class="s3" dir="ltr">Potential<br>Revenue<br>Share</td>
@@ -554,9 +560,9 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr style="height: 40px">
-                <th id="1823713281R7" style="height: 40px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 40px"></div>
+            <tr style="height: 4px">
+                <th id="1823713281R7" style="height: 4px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 4px"></div>
                 </th>
                 <td class="s9"></td>
                 <td class="s3" dir="ltr">Total<br>Missed</td>

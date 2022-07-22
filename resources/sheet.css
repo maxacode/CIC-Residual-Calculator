@@ -50,7 +50,7 @@ html[dir="rtl"] .quantumIconsRtlIcon {
     border: 1px solid #666;
     -moz-box-shadow: 2px 2px 2px rgba(102, 102, 102, .4);
     -webkit-box-shadow: 2px 2px 2px rgba(102, 102, 102, .4);
-    width: 300px
+    width: 200px
 }
 
 .ac-row {
@@ -90,9 +90,9 @@ html[dir="rtl"] .quantumIconsRtlIcon {
     text-align: center;
     white-space: nowrap;
     margin-right: 16px;
-    height: 27px;
-    line-height: 27px;
-    min-width: 54px;
+    height: 17px;
+    line-height: 17px;
+    min-width: 34px;
     outline: 0px;
     padding: 0 8px
 }
@@ -119,7 +119,7 @@ html[dir="rtl"] .quantumIconsRtlIcon {
 }
 
 .jfk-button-narrow {
-    min-width: 34px;
+    min-width: 14px;
     padding: 0
 }
 
