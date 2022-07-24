@@ -48,14 +48,14 @@
         color: #000000;
         font-family: 'docs-Calibri', Arial;
         font-size: 12pt;
-        vertical-align: middle;
+        vertical-align: center;
         white-space: normal;
         overflow: hidden;
         word-wrap: break-word;
         direction: ltr;
         padding: 0px 3px 0px 3px;
     }
-
+ 
     .sblank {
         height: 30px;
     }
@@ -126,7 +126,7 @@
     
     .ritz .waffle .s7 {
         border-bottom: 3px SOLID #c8102e;
-        border-right: 3px SOLID #c8102e;
+        border-right: 3px SOLID #000000;
         background-color: #ffffff;
         text-align: right;
         font-weight: bold;
@@ -153,7 +153,7 @@
         overflow: hidden;
         word-wrap: break-word;
         direction: ltr;
-        padding: 0px 3px 0px 3px;
+        
     }
     
     .ritz .waffle .s8 {
@@ -262,6 +262,41 @@
         direction: ltr;
         padding: 0px 3px 0px 3px;
     }
+    .s132 {
+        border-right: 3px SOLID #000000!important;
+        border-bottom: 3px SOLID #000000!important;
+        border-top: 3px SOLID #000000!important;
+        
+        background-color: #0f9d58!important;
+        text-align: center;
+        color: #ffffff;
+        font-family: 'Arial';
+        font-size: 20pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 0px 3px 0px 3px;
+    }
+
+    .s92 {
+        border-top: 3px SOLID #000000!important;
+        border-right: 3px SOLID #000000!important;
+        
+        background-color: #ea9999!important;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 15pt;
+        vertical-align: middle;
+        text-align: center;
+        font-weight: bold;
+        vertical-align: center;
+        white-space: normal;
+        overflow: hidden;
+        word-wrap: break-word;
+        direction: ltr;
+        padding: 0px 3px 0px 3px;
+    }
     
     .ritz .waffle .s14 {
         background-color: #ffffff;
@@ -311,10 +346,10 @@
         top: 0;
         right: 0;
         z-index: 1;
-        background-color: rgb(246, 241, 241);
+        
     
         color: #020202;
-        font-size: 20px;
+        font-size: 21px;
         padding: 2px 2px 2px 2px;
     }
     .tabs {
@@ -348,7 +383,7 @@
 
 
 <div></div>
-<div style="width:930px" class="w3-bar w3-black">
+<div style="width: 1100px" class="w3-bar w3-black">
     <button style="font-size: 20px;" class="w3-bar-item w3-button tablink" onclick="openCity(event,'Residual')">Residual</button>
     <button style="font-size: 20px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Commission')">Commission</button>
 </div>
@@ -380,36 +415,40 @@
                 <th class="row-header freezebar-origin-ltr"></th>
                 <th id="1823713281C0" style="width:5px; background-color: #fff;" class="column-headers-background"></th>
 
-                <th id="1823713281C1" class="column-headers-background" style="width: 900px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
-                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Commission Calculator</h1>
+                <th id="1823713281C1" class="column-headers-background" style="width: 890px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="1" vspan="center">
+
+                    <h1 style="background-color: #fff; font-size: 35px;margin-block-start: -25px;margin-block-end: -18px; box-sizing: content-box"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 0px 0px 0px;">Call It Closed Commission Calculator</h1>
                     </th>
-     
-                <th id="1063180471C1" style="width:127px;" class="column-headers-background">B</th>
-                <th id="1063180471C2" style="width:105px;" class="column-headers-background">C</th>
+                
+                <th class="s0" style="width:107px;" class="column-headers-background"></th>
+                <th class="s0" style="width:105px;" class="column-headers-background"></th>
           
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th id="1823713281R0" style="height: 10px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 14px"></div>
+                <th id="1823713281R0" style="height: 50px;" class="row-headers-background">
+                    <div class="row-header-wrapper"></div>
                 </th>
                 <td class="s0"></td>
                 <td style="padding: 2px 2px 2px 2px ;" class="s1"><button class="loadButtons">Pre-Sets: </button></td>
-                <td class="s1">
+                <td class="s1" colspan="2">
 
                     <button class="loadButtons" id="company1">
                     <i class="fas fa-share loadButtons"> company1</i>
                   </button></td>
+                
+             
 
-                <td  class="s1">
+                  <td class="s1" colspan="2">
 
                     <button class="loadButtons" id="company2">
                         <i class="fas fa-share loadButtons"> company2</i>
                       </button></td>
 
                 </td>
-                <td class="s1">
+                <td class="s1" colspan="2">
+                    
 
                     <button class="loadButtons"id="company3">
                         <i class="fas fa-share loadButtons"> company3</i>
@@ -424,75 +463,79 @@
                 <td class="s1"></td>
             </tr>
 
-            <tr style="height: 95px">
-                <th id="1063180471R2" style="height: 95px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 95px">3</div>
+            <tr style="height: 5px;">
+                <th id="1063180471R2"  class="row-headers-background">
+                    <div class="row-header-wrapper">3</div>
                 </th>
                 <td class="s2"></td>
-                <td class="s3" dir="ltr">Average <br>Sales Price</td>
-                <td class="s3" dir="ltr"># of Transactions</td>
-                <td class="s3">Average Commission Rate</td>
+                <td class="s3" dir="ltr">Avg <br>Sales Price</td>
+                <td class="s3" dir="ltr"># of Sales</td>
+                <td class="s3">Avg Commission Rate</td>
                 <td class="s3" dir="ltr">Commission Split</td>
-                <td class="s3" dir="ltr">Monthly <br>Fee</td>
+                <td class="s3" dir="ltr">Monthly Fee</td>
                 <td class="s3">Transaction Fee</td>
-                <td class="s3" dir="ltr">Third Party Systems<br>(per mo)</td>
-                <td class="s3">Value of Third Party Systems (per mo)</td>
-                <td class="s3">Sponsored Associates</td>
-                <td class="s3" dir="ltr">Income from Recruiting</td>
+                <td class="s3" dir="ltr">Systems <br> per month</td>
+                <td class="s3">Value of Systems<br> per month</td>
+                <td class="s3">Recruited Associates</td>
+                <td style="border-right: 3px SOLID #c8102e" class="s3" dir="ltr">Income from Recruiting</td>
             </tr>
-            <tr style="height: 52px">
-                <th id="1063180471R3" style="height: 52px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 52px">4</div>
+            <tr style="height: 32px">
+                <th id="1063180471R3" class="row-headers-background">
+                    <div class="row-header-wrapper" >4</div>
                 </th>
                 <td class="s2"></td>
-                <td class="s4">$260,000</td>
-                <td class="s4">20</td>
-                <td class="s4">2.80%</td>
-                <td class="s4">20%</td>
-                <td class="s4" dir="ltr">$1,000</td>
-                <td class="s4" dir="ltr">$200</td>
-                <td class="s4" dir="ltr">$200</td>
-                <td class="s4">$0</td>
-                <td class="s4" dir="ltr">5</td>
-                <td class="s4">$0</td>
+                <td class="s7">$260,000</td>
+                <td class="s7">20</td>
+                <td class="s7">2.80%</td>
+                <td class="s7">20%</td>
+                <td class="s7" dir="ltr">$1,000</td>
+                <td class="s7" dir="ltr">$200</td>
+                <td class="s7" dir="ltr">$200</td>
+                <td class="s7">$0</td>
+                <td class="s7" dir="ltr">5</td>
+                <td class="s7" style="border-right: 3px SOLID #c8102e;">$0</td>
             </tr>
-            <tr style="height: 20px">
-                <th id="1063180471R4" style="height: 20px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 20px">5</div>
+            <tr style="height: 2px">
+                <th id="1063180471R3" class="row-headers-background">
+                    <div class="row-header-wrapper" >4</div>
                 </th>
                 <td class="s0"></td>
-                <td class="s5"></td>
-                <td class="s6"></td>
-                <td class="s7"></td>
-                <td class="s7"></td>
-                <td class="s7"></td>
-                <td class="s7"></td>
-                <td class="s7"></td>
-                <td class="s7"></td>
-                <td class="s7"></td>
-                <td class="s7"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
+                <td class="s0"></td>
             </tr>
-            <tr style="height: 66px">
-                <th id="1063180471R5" style="height: 66px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 66px">6</div>
+            <tr style="height: 6px; ">
+                <th id="1063180471R5" class="row-headers-background">
+                    <div class="row-header-wrapper"></div>
                 </th>
-                <td class="s8"></td>
-                <td class="s9" dir="ltr" colspan="2">Total Paid to Traditional</td>
-                <td class="s10" colspan="2">Total Paid to CIC</td>
-                <td class="s10" colspan="2">Savings with CIC</td>
-                <td class="s10" colspan="2">Potential Additional Income with CIC</td>
-                <td class="s10" dir="ltr" colspan="2">Total Value &amp; Savings with CIC</td>
+                <td class="s"></td>
+             
+        
+                <td style="border-left: 3px SOLID #000000!important" class="s92" dir="ltr" colspan="2">Total Paid to Traditional</td>
+                
+                <td class="s92" colspan="2">Total Paid to CIC</td>
+                <td class="s92" colspan="2">Savings with CIC</td>
+                <td class="s92" colspan="2">Potential Additional Income with CIC</td>
+                <td class="s92"  dir="ltr" colspan="2">Total Value &amp; Savings with CIC</td>
+                <td></td>
             </tr>
-            <tr style="height: 80px">
-                <th id="1063180471R6" style="height: 80px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 80px">7</div>
+            <tr style="height: 46px">
+                <th id="1063180471R6" style="height: 46px;" class="row-headers-background">
+                    <div class="row-header-wrapper" style="line-height: 46px">7</div>
                 </th>
-                <td class="s8"></td>
-                <td class="s11" colspan="2">$47,520</td>
-                <td class="s12" colspan="2">$4,178</td>
-                <td class="s12" colspan="2">$43,342</td>
-                <td class="s13" colspan="2">$6,000</td>
-                <td class="s13" colspan="2">$61,342</td>
+                <td class="s0"></td>
+                <td class="s132" style= "border-left: 3px SOLID #000000!important; background-color: #c8102e!important;" colspan="2">$47,520</td>
+                <td class="s132" colspan="2">$4,178</td>
+                <td class="s132" colspan="2">$43,342</td>
+                <td class="s132" colspan="2">$6,000</td>
+                <td class="s132" colspan="2">$61,342</td>
             </tr>
         </tbody>
     </table>
@@ -507,19 +550,19 @@
                 <th class="row-header freezebar-origin-ltr"></th>
                 <th id="1823713281C0" style="width:5px; background-color: #fff;" class="column-headers-background"></th>
 
-                <th id="1823713281C1" class="column-headers-background" style="width: 900px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
-                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box" id="calcTitle"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Residual Calculator</h1>
+                <th id="1823713281C1" class="column-headers-background" style="width: 890px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
+                    <h1 style="background-color: #fff; font-size: 35px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box" id="calcTitle"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Residual Calculator</h1>
                 </th>
             </tr>
         </thead>
         <tbody>
 
             <tr>
-                <th id="1823713281R0" style="height: 10px;" class="row-headers-background">
-                    <div class="row-header-wrapper" style="line-height: 10px"></div>
+                <th id="1823713281R0" style="height: 55px;" class="row-headers-background">
+                    <div class="row-header-wrapper"></div>
                 </th>
                 <td class="s0"></td>
-                <td style="padding: 2px 2px 2px 2px ;" class="s1"><button class="loadButtons" border="#000000">Pre-Sets: </button></td>
+                <td style="padding: 2px 2px 2px 2px ;" class="s1"><button class="loadButtons">Pre-Sets: </button></td>
                 <td class="s1">
 
                     <button class="loadButtons" id="2get2">
@@ -586,7 +629,7 @@
                 <td class="s6" dir="ltr"><input type="number" id="tier7" class="form-control" placeholder=0></input>
                 </td>
 
-                <td class="s7" dir="ltr"><input type="number" id="sales" class="form-control" value=6></input>
+                <td class="s7" style="border-right: 3px SOLID #c8102e;" type="number" dir="ltr"><input  id="sales" class="form-control" value=6></input>
                 </td>
                 </td>
 
