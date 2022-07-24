@@ -332,7 +332,11 @@
         color: #000000;
          
     }
-    
+    .w3-red, .w3-hover-red:hover {
+        color: #fff;
+        background-color: #c8102e;
+
+    }
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -344,8 +348,8 @@
 
 
 <div></div>
-<div class="w3-bar w3-black">
-    <button style="font-size: 20px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Residual')">Residual</button>
+<div style="width:930px" class="w3-bar w3-black">
+    <button style="font-size: 20px;" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Residual')">Residual</button>
     <button style="font-size: 20px" class="w3-bar-item w3-button tablink" onclick="openCity(event,'Commission')">Commission</button>
 </div>
   
@@ -364,6 +368,7 @@
 
         document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " w3-red";
+            console.log(evt.currentTarget.innerText);
     }
 </script>
 
@@ -375,7 +380,7 @@
                 <th class="row-header freezebar-origin-ltr"></th>
                 <th id="1823713281C0" style="width:30px; background-color: #fff;" class="column-headers-background"></th>
 
-                <th id="1823713281C1" class="column-headers-background" style="width: 800px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
+                <th id="1823713281C1" class="column-headers-background" style="width: 900px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
                     <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Commission Calculator</h1>
                     </th>
             </tr>
@@ -395,7 +400,7 @@
                 <th id="1823713281C0" style="width:30px; background-color: #fff;" class="column-headers-background"></th>
 
                 <th id="1823713281C1" class="column-headers-background" style="width: 900px; text-align: center; padding: 10px 0px 0px 0px; color: #000000; vertical-align: middle;" colspan="8" rowspan="10" vspan="center">
-                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box" id="calcTitle"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;"></h1>
+                    <h1 style="background-color: #fff; font-size: 45px;margin-block-start: -25.33px;;margin-block-end: -22.33px; box-sizing: content-box" id="calcTitle"><img src="Circle.png" alt="CIC" width="120" style="background-color: #fff; vertical-align: middle;padding: 0px 20px 0px 0px;">Call It Closed Residual Calculator</h1>
                 </th>
             </tr>
         </thead>
