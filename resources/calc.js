@@ -426,7 +426,7 @@ allInputsComm.forEach(element => {
 
 
         // Updating the chart with all the new values
-        var values = [commissionOutputTotalPaidTraditional.innerText.replace(/\D/g, ""), commissionOutputTotalPaidCic.innerText.replace(/\D/g, "")];
+        var values = [totalPaidOutputCalc, totalPaidOutputCalcCic];
     
         // console.log("368", values)
 
@@ -478,38 +478,40 @@ function commissionCompany2 () {
     commissionNumOfSales.value = '20'
     commissionAvgCommRate.value = '2.8'
     commissionCommSplit.value = '20'
-    commissionMonthlyFee.value = '0'
-    commissionTransactionFee.value = '0'
-    commissionCostOfSystems.value = '500'
+    commissionMonthlyFee.value = '85'
+    commissionTransactionFee.value = '315'
+    commissionCostOfSystems.value = '0'
     commissionValueOfSystems.value = '0'
     commissionRecruitedAgents.value = 5
-    commissionIncomeFromRecruiting.value = '0'
+    commissionIncomeFromRecruiting.value = commissionRecruitedAgents.value * 800
     commissionOutputIncome.value = commissionRecruitedAgents.innerText;
    // window.myChart2.destroy();
     // console.log("destroyChart2 - 316")
+    console.log("ran Comp2")
+
     commissionRecruitedAgents.dispatchEvent(new Event('change'));
     
-    console.log("ran Comp1")
 }
 
 function commissionCompany3 () {
 
     commissionAvgSalePrice.value = 260000
-    commissionNumOfSales.value = '20'
+    commissionNumOfSales.value = '35'
     commissionAvgCommRate.value = '2.8'
     commissionCommSplit.value = '20'
-    commissionMonthlyFee.value = '0'
-    commissionTransactionFee.value = '0'
-    commissionCostOfSystems.value = '500'
+    commissionMonthlyFee.value = '85'
+    commissionTransactionFee.value = '150'
+    commissionCostOfSystems.value = '0'
     commissionValueOfSystems.value = '0'
     commissionRecruitedAgents.value = 5
-    commissionIncomeFromRecruiting.value = '0'
+    commissionIncomeFromRecruiting.value = commissionRecruitedAgents.value * 800
     commissionOutputIncome.value = commissionRecruitedAgents.innerText;
    // window.myChart2.destroy();
     // console.log("destroyChart2 - 316")
+    console.log("ran Comp3")
+
     commissionRecruitedAgents.dispatchEvent(new Event('change'));
     
-    console.log("ran Comp1")
 }
 
 document.addEventListener('DOMContentLoaded', commissionCompany1());
