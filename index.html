@@ -10,6 +10,15 @@
     
     .form-control {
         font-size: 15pt;
+        border: 0px SOLID #000000;
+        text-align: left;
+
+    }
+    .form-controlComm {
+        font-size: 15pt;
+        border: 0px SOLID #000000;
+        text-align: left;
+
     }
     
     .ritz .waffle .s6 {
@@ -266,12 +275,27 @@
         border-right: 2px SOLID #000000!important;
         border-bottom: 2px SOLID #000000!important;
         border-top: 2px SOLID #000000!important;
-        
+        font-weight:normal;
         background-color: #0f9d58!important;
         text-align: center;
         color: #ffffff;
         font-family: 'Arial';
-        font-size: 13pt;
+        font-size: 20pt;
+        vertical-align: middle;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 0px 3px 0px 3px;
+    }
+    .s132Gray {
+        border-right: 2px SOLID #000000!important;
+        border-bottom: 2px SOLID #000000!important;
+        border-top: 2px SOLID #000000!important;
+        font-weight: bolder;
+        background-color: #aaaa!important;
+        text-align: center;
+        color: #000000;
+        font-family: 'Arial';
+        font-size: 18pt;
         vertical-align: middle;
         white-space: nowrap;
         direction: ltr;
@@ -342,14 +366,15 @@
         position: relative
     }
     .loadButtons {
-        position: relative;
+        width:auto;
+        vertical-align: middle;
+        margin:5px;
+
         top: 0;
         right: 0;
         z-index: 1;
-        
-    
         color: #020202;
-        font-size: 21px;
+  
         padding: 2px 2px 2px 2px;
     }
     .tabs {
@@ -363,10 +388,16 @@
     }
 
     .fa-share {
-        font-size: 23px;
+        font-size: 19px;
         color: #000000;
-         
+        justify-content: right;
     }
+    .fa-shareComm {
+        font-size: 19px;
+        color: #000000;
+        justify-content: right;
+    }
+
     .w3-red, .w3-hover-red:hover {
         color: #fff;
         background-color: #c8102e;
@@ -385,7 +416,7 @@
 <div></div>
 <div style="width: 1100px" class="w3-bar w3-black">
     <button style="font-size: 20px;" class="w3-bar-item w3-button tablink" onclick="openCity(event,'Residual')">Residual</button>
-    <button style="font-size: 20px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Commission')">Commission</button>
+    <button style="font-size: 20px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Commission');">Commission</button>
 </div>
   
 <script>
@@ -431,28 +462,46 @@
                     <div class="row-header-wrapper"></div>
                 </th>
                 <td class="s0"></td>
-                <td style="padding: 2px 2px 2px 2px ;" class="s1"><button class="loadButtons">Pre-Sets: </button></td>
-                <td class="s1" colspan="2">
 
-                    <button class="loadButtons" id="company1">
-                    <i class="fas fa-share loadButtons"> company1</i>
-                  </button></td>
+                <td style="padding: 2px 2px 2px 2px; align-items: right;" class="s1" colspan="9">
+
+                    
+                    <button class="loadButtons" id="commissionCompany1">
+                        <i onclick="commissionCompany1()" class="fas fa-shareComm loadButtons"> company1</i>
+                      </button>
+    
+                      <button class="loadButtons" id="commissionCompany2">
+                        <i class="fas fa-shareComm loadButtons"> company2</i>
+                      </button>
+    
+                      <button class="loadButtons"id="commissionCompany3">
+                        <i class="fas fa-shareComm loadButtons"> company3</i>
+                      </button>
+                    
+                
+                
+                </td>
+                
+                <td class="s1" >
+
+                  
+                
+                </td>
                 
              
 
                   <td class="s1" colspan="2">
 
-                    <button class="loadButtons" id="company2">
-                        <i class="fas fa-share loadButtons"> company2</i>
-                      </button></td>
+                 
+                    
+                    </td>
 
                 </td>
                 <td class="s1" colspan="2">
                     
 
-                    <button class="loadButtons"id="company3">
-                        <i class="fas fa-share loadButtons"> company3</i>
-                      </button></td>
+                   
+                    </td>
 
                 </td>
                 <td class="s1"></td>
@@ -463,7 +512,7 @@
                 <td class="s1"></td>
             </tr>
 
-            <tr style="height: 5px;">
+            <tr style="height: 5px">
                 <th id="1063180471R2"  class="row-headers-background">
                     <div class="row-header-wrapper">3</div>
                 </th>
@@ -486,18 +535,37 @@
                 <td class="s2"></td>
                 
                 <td class="s7">
-                    <input type="number" id="commissionAvgSalePrice" class="form-control" placeholder="$260,000"></input>
+                    $<input type="number" id="commissionAvgSalePrice" class="form-controlComm" placeholder="260,000"></input>
                 </td>
                 
-                <td class="s7">20</td>
-                <td class="s7">2.80%</td>
-                <td class="s7">20%</td>
-                <td class="s7" dir="ltr">$1,000</td>
-                <td class="s7" dir="ltr">$200</td>
-                <td class="s7" dir="ltr">$200</td>
-                <td class="s7">$0</td>
-                <td class="s7" dir="ltr">5</td>
-                <td class="s7" style="border-right: 2px SOLID #c8102e;">$0</td>
+                <td class="s7">
+                    <input type="number" id="commissionNumOfSales" class="form-controlComm" placeholder="20"></input>
+                </td>
+
+                <td class="s7">
+                    <input style="width: 80px; text-align: right;" type="number" id="commissionAvgCommRate" class="form-controlComm" placeholder="2.80"></input>%
+                </td>
+                <td class="s7">
+                    <input  style="width: 80px; text-align: right;" type="number" id="commissionCommSplit" class="form-controlComm" placeholder="20"></input>%
+                </td>
+                <td class="s7" dir="ltr">
+                    $<input type="number" id="commissionMonthlyFee" class="form-controlComm" placeholder="1,000"></input>
+                </td>
+                <td class="s7" dir="ltr">
+                    $<input type="number" id="commissionTransactionFee" class="form-controlComm" placeholder="$200"></input>
+                </td>
+                <td class="s7" dir="ltr">
+                    $<input type="number" id="commissionCostOfSystems" class="form-controlComm" placeholder="200"></input>
+                </td>
+                <td class="s7">
+                    $<input type="number" id="commissionValueOfSystems" class="form-controlComm" placeholder="0"></input>
+                </td>
+                <td class="s7" dir="ltr">
+                    <input type="number" id="commissionRecruitedAgents" class="form-controlComm"></input>
+                </td>
+                <td class="s7" style="border-right: 2px SOLID #c8102e;">
+                    $<input type="number" id="commissionIncomeFromRecruiting" class="form-controlComm" placeholder="0"></input>
+                </td>
             </tr>
             <tr style="height: 52px">
                 <th id="1063180471R3" class="row-headers-background">
@@ -535,14 +603,29 @@
                     <div class="row-header-wrapper" style="line-height: 46px">7</div>
                 </th>
                 <td class="s0"></td>
-                <td class="s132" style= "border-left: 2px SOLID #000000!important; background-color: #c8102e!important;" colspan="2">$47,520</td>
-                <td class="s132" colspan="2">$4,178</td>
-                <td class="s132" colspan="2">$43,342</td>
-                <td class="s132" colspan="2">$6,000</td>
-                <td class="s132" colspan="2">$61,342</td>
+                <td class="s132" style= "border-left: 2px SOLID #000000!important; background-color: #c8102e!important;" colspan="2" id="commissionOutputTotalPaidTraditional">$47,520</td>
+
+                <td class="s132" colspan="2" id="commissionOutputTotalPaidCic">$4,178</td>
+                <td class="s132" colspan="2" id="commissionOutputSavings">$43,342</td>
+                <td class="s132" colspan="2" id="commissionOutputIncome">$6,000</td>
+                <td class="s132" colspan="2" id="commissionOutputSavingsAndValue">$61,342</td>
             </tr>
+            <tr style="height: 34px; padding-left: 90px;"> 
+
+            </tr>
+            <tr>
+                <td style="padding-left:30px;" rowspan="9" colspan="9">
+                    <div>
+                        <canvas id="myChart2" style="box-sizing: content-box;"></canvas>
+    
+                    </div>
+                </td>
+            </tr>
+        
+
         </tbody>
     </table>
+
 </div>
 
 
@@ -566,25 +649,29 @@
                     <div class="row-header-wrapper"></div>
                 </th>
                 <td class="s0"></td>
-                <td style="padding: 2px 2px 2px 2px ;" class="s1"><button class="loadButtons">Pre-Sets: </button></td>
-                <td class="s1">
+                <td style="padding: 2px 2px 2px 2px ;" class="s1"></td>
+                <td class="s1" colspan="10">
 
                     <button class="loadButtons" id="2get2">
-                    <i class="fas fa-share"> 2 get 2</i>
-                  </button></td>
+                    <i class="fas fa-share loadButtons"> 2 get 2</i>
+                  </button>
+                  <button class="loadButtons" id="3get3">
+                    <i class="fas fa-share loadButtons"> 3 get 3</i>
+                  </button>
+                  <button class="loadButtons"id="5get5">
+                    <i class="fas fa-share loadButtons"> 5 get 5</i>
+                  </button>
+                
+                </td>
 
                 <td  class="s1">
 
-                    <button class="loadButtons" id="3get3">
-                        <i class="fas fa-share"> 3 get 3</i>
-                      </button></td>
+                    </td>
 
                 </td>
                 <td class="s1">
 
-                    <button class="loadButtons"id="5get5">
-                        <i class="fas fa-share"> 5 get 5</i>
-                      </button></td>
+                    </td>
 
                 </td>
                 <td class="s1"></td>
