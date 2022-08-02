@@ -1,6 +1,6 @@
 //console.log(personally, ticketNum, tier2, tier3, tier4, sales, revenue);
 
-document.addEventListener('DOMContentLoaded', getInputValues);
+document.addEventListener('DOMContentLoaded', residualGetInputValues);
 
 var outputrevyear = document.getElementById('outputrevyear');
 var outputrevmonth = document.getElementById('outputrevmonth');
@@ -10,7 +10,7 @@ var outputrevyearFull = document.getElementById('outputrevyearFull');
 var totalagents = document.getElementById('totalagents');
 var outputtotalmissed = document.getElementById('outputtotalmissed');
 
-function getInputValues() {
+function residualGetInputValues() {
     var personally = document.getElementById('personally');
     var sales = document.getElementById('sales');
     var tier2 = document.getElementById('tier2');
@@ -50,19 +50,19 @@ window.config = {
 
         responsive: true,
         align: 'top',
-        radius: 170,
+        radius: 130,
         color: '',
         plugins: {
             tooltip: {
                 backgroundColor: "",
                 bodyFont: {
-                    size: 20
+                    size: 1
                 }
             },
             legend: {
                 labels: {
                     font: {
-                        size: 20,
+                        size: 15,
                         weight: "bold"
                     }
                 },
@@ -72,7 +72,7 @@ window.config = {
     }
 };
 
-var myChart = new Chart(
+var myChartRes = new Chart(
     document.getElementById('myChart'),
     config,
 
@@ -123,7 +123,7 @@ allInputs.forEach(element => {
     element.addEventListener('change', (e) => {
         //  console.log(e.target.id +  " Changed")
         //get all updated values. 
-        getInputValues();
+        residualGetInputValues();
         var t1 = personally.value;
         var t2 = tier2.value;
         var t3 = tier3.value;
@@ -220,9 +220,9 @@ allInputs.forEach(element => {
         //fff
         //console.log("| Personally Sponsored: ", personally.value, "| Tier2: ", tier2.value, tier3.innerText, tier4.innerText,"| Sales", sales.value,  "| output: ", outputrevyear.innerText);
 
-        window.myChart.destroy();
+        window.myChartRes.destroy();
         var values = [totalCalc, Number(totalCalcPossible - totalCalc)];
-        console.log(values);
+        //console.log(values);
         var data = {
             labels: labels,
             datasets: [{
@@ -244,7 +244,7 @@ allInputs.forEach(element => {
 
                 responsive: true,
                 align: 'top',
-                radius: 170,
+                radius: 130,
                 color: '',
                 plugins: {
                     tooltip: {
@@ -256,7 +256,7 @@ allInputs.forEach(element => {
                     legend: {
                         labels: {
                             font: {
-                                size: 20,
+                                size: 15,
                                 weight: "bold"
                             }
                         },
@@ -266,10 +266,257 @@ allInputs.forEach(element => {
             }
         };
 
-        window.myChart = new Chart(
+        window.myChartRes = new Chart(
             document.getElementById('myChart'),
             config,
 
         );
     })
 })
+
+
+
+///// COmmision 
+
+
+var commissionOutputTotalPaidTraditional = document.getElementById('commissionOutputTotalPaidTraditional');
+var commissionOutputTotalPaidCic = document.getElementById('commissionOutputTotalPaidCic');
+var commissionOutputSavings = document.getElementById('commissionOutputSavings');
+var commissionOutputIncome = document.getElementById('commissionOutputIncome');
+var commissionOutputSavingsAndValue = document.getElementById('commissionOutputSavingsAndValue')
+
+
+var values = [commissionOutputTotalPaidTraditional.innerText.replace(/\D/g, ""), commissionOutputTotalPaidCic.innerText.replace(/\D/g, "")];
+console.log(values)
+
+var labelsComm = [
+    'Traditonal Company',
+    'Call It Closed',
+];
+var data = {
+    labels: labelsComm,
+    datasets: [{
+        label: 'Traditional vs CIC Cost',
+        backgroundColor: [
+            '#c8102e',
+            '#0f9d58',
+        ],
+        borderColor: '#aaaa',
+        data: values,
+        hoverOffset: 20
+    }]
+};
+
+console.log(data);
+
+window.config = {
+    type: 'bar',
+    data: data,
+    options: {
+
+        responsive: true,
+        align: 'bottom',
+        radius: 190,
+        color: '',
+        plugins: {
+            tooltip: {
+                backgroundColor: "",
+                bodyFont: {
+                    size: 1
+                }
+            },
+            legend: {
+                labels: {
+                    font: {
+                        size: 15,
+                        weight: "bold"
+                    }
+                },
+                position: "top",
+            }
+        }
+    }
+};
+
+const ctx = document.getElementById('myChart2').getContext('2d');
+
+const myChartComm = new Chart(ctx,config);
+
+
+function commissionGetInputValues() {
+    var commissionAvgSalePrice = document.getElementById('commissionAvgSalePrice');
+    var commissionNumOfSales = document.getElementById('commissionNumOfSales');
+    var commissionAvgCommRate = document.getElementById('commissionAvgCommRate');
+    var commissionCommSplit = document.getElementById('commissionCommSplit');
+    var commissionMonthlyFee = document.getElementById('commissionMonthlyFee');
+    var commissionTransactionFee = document.getElementById('commissionTransactionFee');
+    var commissionCostOfSystems = document.getElementById('commissionCostOfSystems');
+    var commissionValueOfSystems = document.getElementById('commissionValueOfSystems');
+    var commissionRecruitedAgents = document.getElementById('commissionRecruitedAgents');
+    var commissionIncomeFromRecruiting  = document.getElementById('commissionIncomeFromRecruiting');
+}
+
+
+
+
+
+var allInputsComm = document.querySelectorAll(".form-controlComm");
+allInputsComm.forEach(element => {
+    element.addEventListener('change', (e) => {
+        // commissionGetInputValues()
+        console.log("Starting alllInputsComm ")
+
+        // Create our number formatter.
+        var format$ = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+
+            // These options are needed to round to whole numbers if that's what you want.
+            minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+            maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
+        });
+
+      
+
+        // Output for total paid to company (sale price * comision % * num of sales * percentage split) + (monthly fee * 12) + (transaction fee * num of sales) + (12 * system per month)
+        var totalPaidOutputCalc = (commissionAvgSalePrice.value
+            *
+            (commissionAvgCommRate.value/100)
+            *
+            commissionNumOfSales.value
+            *
+            (commissionCommSplit.value/100))
+            +
+            (commissionMonthlyFee.value * 12)
+            +
+            (commissionTransactionFee.value * commissionNumOfSales.value)
+            +
+            (commissionCostOfSystems.value * 12)
+            
+
+      //  console.log("totalPaidOut-Output: " , totalPaidOutputCalc);
+        commissionOutputTotalPaidTraditional.innerText = format$.format(totalPaidOutputCalc)
+
+        //output for total paid to cic (299 * num of sales) + (1400 -yearly fees)
+        var totalPaidOutputCalcCic = (
+            299 
+            * 
+            (commissionNumOfSales.value/2)) 
+            + 
+            (12 * 99)
+
+        commissionOutputTotalPaidCic.innerText = format$.format(totalPaidOutputCalcCic)
+
+        // total saved with CIC = paid to traditional - paid to CIC
+        commissionOutputSavings.innerText = format$.format(
+            totalPaidOutputCalc - totalPaidOutputCalcCic);
+
+            // output for income with CIC based on agets recruted * 6 (sales a year) * $50 first level.
+
+        var incomeFromRecuritng = (commissionRecruitedAgents.value)*6*50
+        commissionOutputIncome.innerText = format$.format(incomeFromRecuritng)
+      
+        // ouput of total value = saved + income from recruiting
+        commissionOutputSavingsAndValue.innerText = format$.format(
+            incomeFromRecuritng + (totalPaidOutputCalc - totalPaidOutputCalcCic))
+
+
+
+
+
+
+        // Updating the chart with all the new values
+        var values = [totalPaidOutputCalc, totalPaidOutputCalcCic];
+    
+        // console.log("368", values)
+
+
+        // myChart2.data.datasets.forEach((dataset) => {
+        // dataset.data.push(values);
+        // });
+        
+
+        // console.log("370", myChart2)
+        // myChartComm.data.datasets.push(values);
+        // console.log("Push", values)
+ 
+        myChartComm.data.datasets[0].data = values;
+        // console.log( myChartComm.data.datasets.data );
+        // console.log( myChartComm.data.datasets );
+
+        myChartComm.update();
+        // console.log("Update", values)
+
+    })
+})
+
+// commissionChartInitBlank();
+
+function commissionCompany1 () {
+
+    commissionAvgSalePrice.value = 260000
+    commissionNumOfSales.value = '20'
+    commissionAvgCommRate.value = '2.8'
+    commissionCommSplit.value = '20'
+    commissionMonthlyFee.value = '0'
+    commissionTransactionFee.value = '0'
+    commissionCostOfSystems.value = '500'
+    commissionValueOfSystems.value = '0'
+    commissionRecruitedAgents.value = 5
+    commissionIncomeFromRecruiting.value = '0'
+    commissionOutputIncome.value = commissionRecruitedAgents.innerText;
+   // window.myChart2.destroy();
+    // console.log("destroyChart2 - 316")
+    commissionRecruitedAgents.dispatchEvent(new Event('change'));
+    
+    console.log("ran Comp1")
+}
+
+function commissionCompany2 () {
+
+    commissionAvgSalePrice.value = 260000
+    commissionNumOfSales.value = '20'
+    commissionAvgCommRate.value = '2.8'
+    commissionCommSplit.value = '20'
+    commissionMonthlyFee.value = '85'
+    commissionTransactionFee.value = '315'
+    commissionCostOfSystems.value = '0'
+    commissionValueOfSystems.value = '0'
+    commissionRecruitedAgents.value = 5
+    commissionIncomeFromRecruiting.value = commissionRecruitedAgents.value * 800
+    commissionOutputIncome.value = commissionRecruitedAgents.innerText;
+   // window.myChart2.destroy();
+    // console.log("destroyChart2 - 316")
+    console.log("ran Comp2")
+
+    commissionRecruitedAgents.dispatchEvent(new Event('change'));
+    
+}
+
+function commissionCompany3 () {
+
+    commissionAvgSalePrice.value = 260000
+    commissionNumOfSales.value = '35'
+    commissionAvgCommRate.value = '2.8'
+    commissionCommSplit.value = '20'
+    commissionMonthlyFee.value = '85'
+    commissionTransactionFee.value = '150'
+    commissionCostOfSystems.value = '0'
+    commissionValueOfSystems.value = '0'
+    commissionRecruitedAgents.value = 5
+    commissionIncomeFromRecruiting.value = commissionRecruitedAgents.value * 800
+    commissionOutputIncome.value = commissionRecruitedAgents.innerText;
+   // window.myChart2.destroy();
+    // console.log("destroyChart2 - 316")
+    console.log("ran Comp3")
+
+    commissionRecruitedAgents.dispatchEvent(new Event('change'));
+    
+}
+
+document.addEventListener('DOMContentLoaded', commissionCompany1());
+
+
+// console.log( myChartComm.data.datasets[0].data );
+// console.log( myChartComm.data.datasets );
+
