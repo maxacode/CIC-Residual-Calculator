@@ -399,12 +399,15 @@ allInputsComm.forEach(element => {
 
         //output for total paid to cic (299 * num of sales) + (1400 -yearly fees)
         var totalPaidOutputCalcCic = (
-            299 
-            * 
-            (commissionNumOfSales.value/2)) 
-            + 
-            (12 * 99)
-
+            //Used to be:
+            //299 
+            //* 
+            //(commissionNumOfSales.value/2)) 
+            //+ 
+            //(12 * 99)
+            // NOW just static 
+            1443)
+            
         commissionOutputTotalPaidCic.innerText = format$.format(totalPaidOutputCalcCic)
 
         // total saved with CIC = paid to traditional - paid to CIC
@@ -452,7 +455,25 @@ allInputsComm.forEach(element => {
 
 // commissionChartInitBlank();
 
+
+/// **************
+// Setting active backgrounds on which preset is setup.. .loadButtons may be the way to go 
+var commissionCompany1JS = document.getElementById('commissionCompany1');
+var commissionCompany2JS = document.getElementById('commissionCompany2');
+var commissionCompany3JS = document.getElementById('commissionCompany3');
+
+var allPreSets = document.querySelectorAll(".fa-shareComm")
+
 function commissionCompany1 () {
+
+    allPreSets.forEach(preset => {
+        preset.style.color = "#020202"
+
+    } )
+
+    commissionCompany1JS.style.backgroundColor = "#c8102e"
+    commissionCompany1JS.lastElementChild.style.color = "#ffffff"
+    //commissionCompany1JS.firstChild.
 
     commissionAvgSalePrice.value = 260000
     commissionNumOfSales.value = '20'
