@@ -398,6 +398,7 @@ allInputsComm.forEach(element => {
         commissionOutputTotalPaidTraditional.innerText = format$.format(totalPaidOutputCalc)
 
         //output for total paid to cic (299 * num of sales) + (1400 -yearly fees)
+        // now "changed paid to CIC as statis 12 * 99 plus singel IT 250 cost
         var totalPaidOutputCalcCic = (
             //Used to be:
             //299 
@@ -407,7 +408,7 @@ allInputsComm.forEach(element => {
             //(12 * 99)
             // NOW just static 
             1443)
-            
+
         commissionOutputTotalPaidCic.innerText = format$.format(totalPaidOutputCalcCic)
 
         // total saved with CIC = paid to traditional - paid to CIC
