@@ -447,9 +447,31 @@ allInputsComm.forEach(element => {
     //avg salfe price * # of sales * avg comm rate * comm split <= 16k
 
 
-            totalPaidOutputCalc = totalPaidOutputCalc + (commissionAvgSalePrice.value * commissionNumOfSales.value * (commissionAvgCommRate.value/100) * (commissionCommSplit.value/100))
+            // Looping through each sale. 
+            var totalPaidOutputCalc = 0 
 
-            var totalPaidOutputCalc = (
+            function createRange(min, max) {
+                var range = [];
+                for (let i = min; i <= max; i++) {
+                    range.push(i);
+                    totalPaidOutputCalc = totalPaidOutputCalc + commissionAvgSalePrice.value * (commissionAvgCommRate.value/100) * (commissionCommSplit.value/100)
+
+                    console.log(totalPaidOutputCalc)
+                }
+                return range;
+            }
+            
+            createRange(0, commissionNumOfSales.value)
+            
+            totalPaidOutputCalc = (commissionAvgSalePrice.value * commissionNumOfSales.value * (commissionAvgCommRate.value/100) * (commissionCommSplit.value/100))
+
+           //w console.log(totalPaidOutputCalc)
+
+            if (totalPaidOutputCalc > 16000) {
+                totalPaidOutputCalc = 16000 }
+            
+
+            var totalPaidOutputCalc = ( totalPaidOutputCalc + 
                 // $25 broker review fee on each transaction 
             (25 * commissionNumOfSales.value)
             )
