@@ -1,5 +1,28 @@
 //console.log(personally, ticketNum, tier2, tier3, tier4, sales, revenue);
 
+//changed paid to CIC as statis 12 * 99 plus singel IT 250 cost
+
+//!!! DONE !!!!!
+// Change tabs of Commison calc (Traditiona/ Capp/ICon) to red highlight
+// "Total Paid to Traditial should change to match Tab or "Other company" 
+
+
+// CAPPING
+// should be 20220 instead of 36,440
+// If
+// avg salfe price * # of sales * avg comm rate * comm split <= 16k
+//  65$ transaction fee for first 12 until cap
+//  if cap then 1-8 = 65 then 10-12 $140
+//  $315
+// 13 till 20 transactions $275
+// TRANS FEE BROKEN DOWN
+// $25 broker review fee on each transaction 
+// plus $40 paid only for first 12 transactions then dropss until capp
+// plus $250 when they capp (16k) on every transaction for 8 trans more
+// then plus $75 permenently 
+//  ICON
+//  Anual Community Fee - 3k 
+
 document.addEventListener('DOMContentLoaded', residualGetInputValues);
 
 var outputrevyear = document.getElementById('outputrevyear');
@@ -284,9 +307,14 @@ var commissionOutputTotalPaidCic = document.getElementById('commissionOutputTota
 var commissionOutputSavings = document.getElementById('commissionOutputSavings');
 var commissionOutputIncome = document.getElementById('commissionOutputIncome');
 var commissionOutputSavingsAndValue = document.getElementById('commissionOutputSavingsAndValue')
+var totalpaidtoxyztest = document.getElementById('totalpaidtoxyztest');
+
+
 
 
 var values = [commissionOutputTotalPaidTraditional.innerText.replace(/\D/g, ""), commissionOutputTotalPaidCic.innerText.replace(/\D/g, "")];
+
+
 console.log(values)
 
 var labelsComm = [
@@ -358,15 +386,16 @@ function commissionGetInputValues() {
 
 
 
-
+//window.currentCommissionCompany = "none"
 
 var allInputsComm = document.querySelectorAll(".form-controlComm");
 allInputsComm.forEach(element => {
     element.addEventListener('change', (e) => {
         // commissionGetInputValues()
-        console.log("Starting alllInputsComm ")
+        //console.log(e)
+        //console.log(e.target.parentElement)
 
-        // Create our number formatter.
+          // Create our number formatter.
         var format$ = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD',
@@ -376,27 +405,81 @@ allInputsComm.forEach(element => {
             maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
         });
 
-      
+        console.log(currentCommissionCompany)
 
-        // Output for total paid to company (sale price * comision % * num of sales * percentage split) + (monthly fee * 12) + (transaction fee * num of sales) + (12 * system per month)
-        var totalPaidOutputCalc = (commissionAvgSalePrice.value
-            *
-            (commissionAvgCommRate.value/100)
-            *
-            commissionNumOfSales.value
-            *
-            (commissionCommSplit.value/100))
-            +
-            (commissionMonthlyFee.value * 12)
-            +
-            (commissionTransactionFee.value * commissionNumOfSales.value)
-            +
-            (commissionCostOfSystems.value * 12)
+        if (currentCommissionCompany == "CommissionCompany1") {
+            console.log("Output comp1")
+
+             
+            // Output Variable for total paid to company (sale price * comision % * num of sales * percentage split) + (monthly fee * 12) + (transaction fee * num of sales) + (12 * system per month)
+            var totalPaidOutputCalc = (commissionAvgSalePrice.value
+                *
+                (commissionAvgCommRate.value/100)
+                *
+                commissionNumOfSales.value
+                *
+                (commissionCommSplit.value/100))
+                +
+                (commissionMonthlyFee.value * 12)
+                +
+                (commissionTransactionFee.value * commissionNumOfSales.value)
+                +
+                (commissionCostOfSystems.value * 12)
+                
+
+                //Output to teh actual html
+        //  console.log("totalPaidOut-Output: " , totalPaidOutputCalc);
+            commissionOutputTotalPaidTraditional.innerText = format$.format(totalPaidOutputCalc)
+
+
+        } else if (currentCommissionCompany == "CommissionCompany2") {
+            console.log("Output comp2")
+
+                // 
+    // $25 broker review fee on each transaction 
+
+    // plus $40 paid only for first 12 transactions then dropss until capp
+
+    // plus $250 when they capp (16k) on every transaction for 8 trans more
+
+    // then plus $75 permenently 
+
+    //avg salfe price * # of sales * avg comm rate * comm split <= 16k
+
+
+            totalPaidOutputCalc = totalPaidOutputCalc + (commissionAvgSalePrice.value * commissionNumOfSales.value * (commissionAvgCommRate.value/100) * (commissionCommSplit.value/100))
+
+            var totalPaidOutputCalc = (
+                // $25 broker review fee on each transaction 
+            (25 * commissionNumOfSales.value)
+            )
+
+            // plus $40 paid only for first 12 transactions then dropss until capp
+
+            if (commissionNumOfSales.value <= 12) {
+                totalPaidOutputCalc = totalPaidOutputCalc + (40 * commissionNumOfSales.value)
+                } else { totalPaidOutputCalc = totalPaidOutputCalc + (40 * 12)}
+            
+            
+           
             
 
-      //  console.log("totalPaidOut-Output: " , totalPaidOutputCalc);
-        commissionOutputTotalPaidTraditional.innerText = format$.format(totalPaidOutputCalc)
+            commissionOutputTotalPaidTraditional.innerText = format$.format(totalPaidOutputCalc)
 
+
+
+
+        }
+        else if (currentCommissionCompany == "CommissionCompany3") {
+            console.log("Output comp3")
+
+        }
+
+
+
+      
+
+       
         //output for total paid to cic (299 * num of sales) + (1400 -yearly fees)
         // now "changed paid to CIC as statis 12 * 99 plus singel IT 250 cost
         var totalPaidOutputCalcCic = (
@@ -467,13 +550,34 @@ var allPreSets = document.querySelectorAll(".fa-shareComm")
 
 function commissionCompany1 () {
 
+    window.currentCommissionCompany = "CommissionCompany1"
+    console.log(currentCommissionCompany)
+
+
     allPreSets.forEach(preset => {
         preset.style.color = "#020202"
 
     } )
 
+    // c8102e = CIC Red
+    // 0000000 = black
+    // ebebeb = light grey
+
+    // ffffff = white    
+
+    totalpaidtoxyztest.innerText = "Total Paid to Traditional"
+
     commissionCompany1JS.style.backgroundColor = "#c8102e"
     commissionCompany1JS.lastElementChild.style.color = "#ffffff"
+
+    commissionCompany2JS.style.backgroundColor = "#ebebeb"
+    commissionCompany2JS.lastElementChild.style.color = "#c8102e"
+
+    commissionCompany3JS.style.backgroundColor = "#ebebeb"
+    commissionCompany3JS.lastElementChild.style.color = "#c8102e"
+
+
+
     //commissionCompany1JS.firstChild.
 
     commissionAvgSalePrice.value = 260000
@@ -495,7 +599,24 @@ function commissionCompany1 () {
 }
 
 function commissionCompany2 () {
+    window.currentCommissionCompany = "CommissionCompany2"
+    console.log(currentCommissionCompany)
 
+
+
+    totalpaidtoxyztest.innerText = "Total Paid to EXP (Capping)"
+
+
+    commissionCompany2JS.style.backgroundColor = "#c8102e"
+    commissionCompany2JS.lastElementChild.style.color = "#ffffff"
+
+    commissionCompany1JS.style.backgroundColor = "#ebebeb"
+    commissionCompany1JS.lastElementChild.style.color = "#c8102e"
+
+    commissionCompany3JS.style.backgroundColor = "#ebebeb"
+    commissionCompany3JS.lastElementChild.style.color = "#c8102e"
+
+    
     commissionAvgSalePrice.value = 260000
     commissionNumOfSales.value = '20'
     commissionAvgCommRate.value = '2.8'
@@ -509,6 +630,20 @@ function commissionCompany2 () {
     commissionOutputIncome.value = commissionRecruitedAgents.innerText;
    // window.myChart2.destroy();
     // console.log("destroyChart2 - 316")
+
+       // Create our number formatter.
+       var format$ = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+
+        // These options are needed to round to whole numbers if that's what you want.
+        minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+        maximumFractionDigits: 2, // (causes 2500.99 to be printed as $2,501)
+    });
+    
+
+  
+
     console.log("ran Comp2")
 
     commissionRecruitedAgents.dispatchEvent(new Event('change'));
@@ -516,6 +651,22 @@ function commissionCompany2 () {
 }
 
 function commissionCompany3 () {
+    window.currentCommissionCompany = "CommissionCompany3"
+    console.log(currentCommissionCompany)
+
+
+
+    totalpaidtoxyztest.innerText = "Total Paid to EXP (ICON)"
+
+
+    commissionCompany3JS.style.backgroundColor = "#c8102e"
+    commissionCompany3JS.lastElementChild.style.color = "#ffffff"
+
+    commissionCompany1JS.style.backgroundColor = "#ebebeb"
+    commissionCompany1JS.lastElementChild.style.color = "#c8102e"
+
+    commissionCompany2JS.style.backgroundColor = "#ebebeb"
+    commissionCompany2JS.lastElementChild.style.color = "#c8102e"
 
     commissionAvgSalePrice.value = 260000
     commissionNumOfSales.value = '35'
@@ -532,7 +683,9 @@ function commissionCompany3 () {
     // console.log("destroyChart2 - 316")
     console.log("ran Comp3")
 
+
     commissionRecruitedAgents.dispatchEvent(new Event('change'));
+  
     
 }
 
