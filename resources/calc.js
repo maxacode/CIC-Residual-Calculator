@@ -163,7 +163,7 @@ allInputs.forEach(element => {
         // =IF(A3=1,
         // ((A3*50*H3)), 
         if (t1 >= 1) {
-            totalCalc += (t1 * 50 * sa);
+            totalCalc += (t1 * 100 * sa);
             // console.log("t1 ran" + totalCalc);
 
         }
@@ -171,7 +171,7 @@ allInputs.forEach(element => {
         // ((A3*50*H3) + (B3*60*H3)), 
 
         if (t1 >= 2) {
-            totalCalc += (t2 * 60 * sa);
+            totalCalc += (t2 * 50 * sa);
             // console.log("t2 ran" + totalCalc);
         };
 
@@ -179,27 +179,27 @@ allInputs.forEach(element => {
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3)),
 
         if (t1 >= 3) {
-            totalCalc += (t3 * 12 * sa);
+            totalCalc += (t3 * 15 * sa);
             // console.log("t3 ran" + totalCalc);
         };
         // IF(A3<=5,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3)),
         if (t1 >= 5) {
-            totalCalc += (t4 * 10 * sa);
+            totalCalc += (t4 * 15 * sa);
             //  console.log("t4 ran" + totalCalc);
         };
 
         // IF(A3<=7,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3)),
         if (t1 >= 7) {
-            totalCalc += (t5 * 11 * sa);
+            totalCalc += (t5 * 10 * sa);
             //  console.log("t5 ran" + totalCalc);
         };
 
         // IF(A3<=10,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)),
         if (t1 >= 10) {
-            totalCalc += (t6 * 12 * sa);
+            totalCalc += (t6 * 15 * sa);
             // console.log("t4 ran" + totalCalc);
         };
         // IF(A3>=15,
