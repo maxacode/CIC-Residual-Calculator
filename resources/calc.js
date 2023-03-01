@@ -114,6 +114,15 @@ var _3got3 = document.getElementById('3got3');
 var _6got6 = document.getElementById('6got6');
 var _15got15 = document.getElementById('15got15');
 
+var compt1 = 100
+var compt2 = 50
+var compt3 = 15
+var compt4 = 15
+var compt5 = 10
+var compt6 = 15
+var compt7 = 40
+
+
 var allButtons = document.querySelectorAll('.fa-share');
 allButtons.forEach(element => {
     element.addEventListener('click', (e) => {
@@ -163,7 +172,7 @@ allInputs.forEach(element => {
         // =IF(A3=1,
         // ((A3*50*H3)), 
         if (t1 >= 1) {
-            totalCalc += (t1 * 100 * sa);
+            totalCalc += (t1 * compt1 * sa);
             // console.log("t1 ran" + totalCalc);
 
         }
@@ -171,7 +180,7 @@ allInputs.forEach(element => {
         // ((A3*50*H3) + (B3*60*H3)), 
 
         if (t1 >= 2) {
-            totalCalc += (t2 * 50 * sa);
+            totalCalc += (t2 * compt2 * sa);
             // console.log("t2 ran" + totalCalc);
         };
 
@@ -179,33 +188,33 @@ allInputs.forEach(element => {
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3)),
 
         if (t1 >= 3) {
-            totalCalc += (t3 * 15 * sa);
+            totalCalc += (t3 * compt3 * sa);
             // console.log("t3 ran" + totalCalc);
         };
         // IF(A3<=5,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3)),
         if (t1 >= 5) {
-            totalCalc += (t4 * 15 * sa);
+            totalCalc += (t4 * compt4 * sa);
             //  console.log("t4 ran" + totalCalc);
         };
 
         // IF(A3<=7,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3)),
         if (t1 >= 7) {
-            totalCalc += (t5 * 10 * sa);
+            totalCalc += (t5 * compt5 * sa);
             //  console.log("t5 ran" + totalCalc);
         };
 
         // IF(A3<=10,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)),
         if (t1 >= 10) {
-            totalCalc += (t6 * 15 * sa);
+            totalCalc += (t6 * compt6 * sa);
             // console.log("t4 ran" + totalCalc);
         };
         // IF(A3>=15,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)) + (G3*40*H3))))))))
         if (t1 >= 15) {
-            totalCalc += (t7 * 40 * sa);
+            totalCalc += (t7 * compt7 * sa);
             //console.log("t4 ran" + totalCalc);
         };
 
@@ -227,7 +236,7 @@ allInputs.forEach(element => {
 
         outputrevmonth.innerText = formatter.format(totalCalc / 12)
 
-        var totalCalcPossible = (t1 * 100 * sa) + (t2 * 50 * sa) + (t3 * 15 * sa) + (t4 * 15 * sa) + (t5 * 10 * sa) + (t6 * 15 * sa) + (t7 * 40 * sa)
+        var totalCalcPossible = (t1 * compt1 * sa) + (t2 * compt2 * sa) + (t3 * compt3 * sa) + (t4 * compt4 * sa) + (t5 * compt5 * sa) + (t6 * compt6 * sa) + (t7 * compt7 * sa)
 
         outputrevyearFull.style.backgroundColor = '#aaaa';
         outputrevyearFull.innerText = formatter.format(totalCalcPossible);
