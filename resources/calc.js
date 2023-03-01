@@ -33,6 +33,12 @@ var outputrevyearFull = document.getElementById('outputrevyearFull');
 var totalagents = document.getElementById('totalagents');
 var outputtotalmissed = document.getElementById('outputtotalmissed');
 
+// var versionNumber = document.getElementById('versionNumber');
+// versionNumber.value = "4.1"
+
+document.getElementById("versionNumber").innerText = "Version 4.1";
+
+
 function residualGetInputValues() {
     var personally = document.getElementById('personally');
     var sales = document.getElementById('sales');
@@ -113,6 +119,8 @@ var myChartRes = new Chart(
 var _3got3 = document.getElementById('3got3');
 var _6got6 = document.getElementById('6got6');
 var _15got15 = document.getElementById('15got15');
+
+
 
 var compt1 = 100
 var compt2 = 50
