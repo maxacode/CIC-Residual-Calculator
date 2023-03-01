@@ -227,7 +227,7 @@ allInputs.forEach(element => {
 
         outputrevmonth.innerText = formatter.format(totalCalc / 12)
 
-        var totalCalcPossible = (t1 * 50 * sa) + (t2 * 60 * sa) + (t3 * 12 * sa) + (t4 * 10 * sa) + (t5 * 11 * sa) + (t6 * 12 * sa) + (t7 * 40 * sa)
+        var totalCalcPossible = (t1 * 100 * sa) + (t2 * 50 * sa) + (t3 * 15 * sa) + (t4 * 15 * sa) + (t5 * 10 * sa) + (t6 * 15 * sa) + (t7 * 40 * sa)
 
         outputrevyearFull.style.backgroundColor = '#aaaa';
         outputrevyearFull.innerText = formatter.format(totalCalcPossible);
