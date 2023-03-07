@@ -181,6 +181,7 @@ allInputs.forEach(element => {
         // ((A3*50*H3)), 
         if (t1 >= 1) {
             totalCalc += (t1 * compt1 * sa);
+
             // console.log("t1 ran" + totalCalc);
 
         }
@@ -189,6 +190,7 @@ allInputs.forEach(element => {
 
         if (t1 >= 2) {
             totalCalc += (t2 * compt2 * sa);
+
             // console.log("t2 ran" + totalCalc);
         };
 
@@ -197,12 +199,14 @@ allInputs.forEach(element => {
 
         if (t1 >= 3) {
             totalCalc += (t3 * compt3 * sa);
+
             // console.log("t3 ran" + totalCalc);
         };
         // IF(A3<=5,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3)),
         if (t1 >= 5) {
             totalCalc += (t4 * compt4 * sa);
+
             //  console.log("t4 ran" + totalCalc);
         };
 
@@ -210,13 +214,16 @@ allInputs.forEach(element => {
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3)),
         if (t1 >= 7) {
             totalCalc += (t5 * compt5 * sa);
+
             //  console.log("t5 ran" + totalCalc);
         };
 
         // IF(A3<=10,
         // ((A3*50*H3) + (B3*60*H3) +(C3*12*H3) + (D3*10*H3) +(E3*11*H3) + (F3*12*H3)),
         if (t1 >= 10) {
+
             totalCalc += (t6 * compt6 * sa);
+
             // console.log("t4 ran" + totalCalc);
         };
         // IF(A3>=15,
@@ -245,6 +252,7 @@ allInputs.forEach(element => {
         outputrevmonth.innerText = formatter.format(totalCalc / 12)
 
         var totalCalcPossible = (t1 * compt1 * sa) + (t2 * compt2 * sa) + (t3 * compt3 * sa) + (t4 * compt4 * sa) + (t5 * compt5 * sa) + (t6 * compt6 * sa) + (t7 * compt7 * sa)
+
 
         outputrevyearFull.style.backgroundColor = '#aaaa';
         outputrevyearFull.innerText = formatter.format(totalCalcPossible);
