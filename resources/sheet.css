@@ -71218,7 +71218,8 @@ div.waffle-filterbox-label-icon {
     overflow: hidden;
     padding: 2px 5px 2px 10px;
     text-overflow: ellipsis;
-    white-space: nowrap
+    white-space: nowrap;
+    color: #fffaaa
 }
 
 .waffle-slicer-status-icon-container {

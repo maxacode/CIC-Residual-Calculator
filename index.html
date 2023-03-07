@@ -389,13 +389,14 @@
 
     .fa-share {
         font-size: 19px;
-        color: #000000;
+        color: #020202;
         justify-content: right;
     }
     .fa-shareComm {
         font-size: 19px;
-        color: #000000;
+        color: #020202;
         justify-content: right;
+        
     }
 
     .w3-red, .w3-hover-red:hover {
@@ -417,6 +418,10 @@
 <div style="width: 1100px" class="w3-bar w3-black">
     <button style="font-size: 20px;" class="w3-bar-item w3-button tablink" onclick="openCity(event,'Residual')">Residual</button>
     <button style="font-size: 20px" class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Commission');">Commission</button>
+    <!-- <right> <a id="versionNumber" style="font-size: 15px; " >123<a> </right> -->
+    <!-- <td class="s6" dir="ltr"><input type="number" id="tier7" class="form-control" placeholder=0></input> -->
+        <p id="versionNumber" style="text-align:right"></p>
+
 </div>
   
 <script>
@@ -429,7 +434,7 @@
 
         tablinks = document.getElementsByClassName("tablink");
         for (i =0; i < x.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", " ");
         }
 
         document.getElementById(tabName).style.display = "block";
@@ -590,7 +595,7 @@
                 <td class="s"></td>
              
         
-                <td style="border-left: 2px SOLID #000000!important" class="s92" dir="ltr" colspan="2">Total Paid to Traditional</td>
+                <td style="border-left: 2px SOLID #000000!important" class="s92" dir="ltr" id="totalpaidtoxyztest" colspan="2">Total Paid to Traditional</td>
                 
                 <td class="s92" colspan="2">Total Paid to CIC</td>
                 <td class="s92" colspan="2">Savings with CIC</td>
