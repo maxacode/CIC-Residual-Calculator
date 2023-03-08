@@ -3,7 +3,7 @@
 //changed paid to CIC as statis 12 * 99 plus singel IT 250 cost
 
 //!!! DONE !!!!!
-// Change tabs of Commison calc (Traditiona/ Capp/ICon) to red highlight
+// Change tabs of Commison calc (Traditiona/ EXP/KW) to red highlight
 // "Total Paid to Traditial should change to match Tab or "Other company" 
 
 
@@ -33,10 +33,9 @@ var outputrevyearFull = document.getElementById('outputrevyearFull');
 var totalagents = document.getElementById('totalagents');
 var outputtotalmissed = document.getElementById('outputtotalmissed');
 
-// var versionNumber = document.getElementById('versionNumber');
-// versionNumber.value = "4.1"
+ 
 
-document.getElementById("versionNumber").innerText = "Version 4.1";
+document.getElementById("versionNumber").innerText = "Version 4.2";
 
 
 function residualGetInputValues() {
@@ -396,7 +395,7 @@ function commissionGetInputValues() {
     var commissionMonthlyFee = document.getElementById('commissionMonthlyFee');
     var commissionTransactionFee = document.getElementById('commissionTransactionFee');
     var commissionCostOfSystems = document.getElementById('commissionCostOfSystems');
-    var commissionValueOfSystems = document.getElementById('commissionValueOfSystems');
+    var commissionAnnualCap  = document.getElementById('commissionValueOfSystems');
     var commissionRecruitedAgents = document.getElementById('commissionRecruitedAgents');
     var commissionIncomeFromRecruiting  = document.getElementById('commissionIncomeFromRecruiting');
 }
@@ -626,7 +625,7 @@ function commissionCompany1 () {
     commissionMonthlyFee.value = '0'
     commissionTransactionFee.value = '0'
     commissionCostOfSystems.value = '500'
-    commissionValueOfSystems.value = '0'
+    commissionAnnualCap.value = '0'
     commissionRecruitedAgents.value = 5
     commissionIncomeFromRecruiting.value = '0'
     commissionOutputIncome.value = commissionRecruitedAgents.innerText;
@@ -643,7 +642,7 @@ function commissionCompany2 () {
 
 
 
-    totalpaidtoxyztest.innerText = "Total Paid to EXP (Capping)"
+    totalpaidtoxyztest.innerText = "Total Paid to EXP"
 
 
     commissionCompany2JS.style.backgroundColor = "#c8102e"
@@ -663,7 +662,7 @@ function commissionCompany2 () {
     commissionMonthlyFee.value = '85'
     commissionTransactionFee.value = '315'
     commissionCostOfSystems.value = '0'
-    commissionValueOfSystems.value = '0'
+    commissionAnnualCap.value = '16000'
     commissionRecruitedAgents.value = 5
     commissionIncomeFromRecruiting.value = commissionRecruitedAgents.value * 800
     commissionOutputIncome.value = commissionRecruitedAgents.innerText;
@@ -695,7 +694,7 @@ function commissionCompany3 () {
 
 
 
-    totalpaidtoxyztest.innerText = "Total Paid to EXP (ICON)"
+    totalpaidtoxyztest.innerText = "Total Paid to KW"
 
 
     commissionCompany3JS.style.backgroundColor = "#c8102e"
@@ -714,7 +713,7 @@ function commissionCompany3 () {
     commissionMonthlyFee.value = '85'
     commissionTransactionFee.value = '150'
     commissionCostOfSystems.value = '0'
-    commissionValueOfSystems.value = '0'
+    commissionAnnualCap.value = '20000'
     commissionRecruitedAgents.value = 5
     commissionIncomeFromRecruiting.value = commissionRecruitedAgents.value * 800
     commissionOutputIncome.value = commissionRecruitedAgents.innerText;
