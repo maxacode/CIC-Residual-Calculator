@@ -33,10 +33,8 @@ var outputrevyearFull = document.getElementById('outputrevyearFull');
 var totalagents = document.getElementById('totalagents');
 var outputtotalmissed = document.getElementById('outputtotalmissed');
 
-// var versionNumber = document.getElementById('versionNumber');
-// versionNumber.value = "4.1"
 
-document.getElementById("versionNumber").innerText = "Version 5.0";
+document.getElementById("versionNumber").innerText = "Version 5.3";
 
 
 function residualGetInputValues() {
@@ -381,7 +379,7 @@ window.config = {
             legend: {
                 labels: {
                     font: {
-                        size: 15,
+                        size: 20,
                         weight: "bold"
                     }
                 },
@@ -530,13 +528,7 @@ allInputsComm.forEach(element => {
         //output for total paid to cic (299 * num of sales) + (1400 -yearly fees)
         // now "changed paid to CIC as statis 12 * 99 plus singel IT 250 cost
         var totalPaidOutputCalcCic = (
-            //Used to be:
-            //299 
-            //* 
-            //(commissionNumOfSales.value/2)) 
-            //+ 
-            //(12 * 99)
-            // NOW just static 
+
             1443)
 
         commissionOutputTotalPaidCic.innerText = format$.format(totalPaidOutputCalcCic)
@@ -555,31 +547,13 @@ allInputsComm.forEach(element => {
             incomeFromRecuritng + (totalPaidOutputCalc - totalPaidOutputCalcCic))
 
 
-
-
-
-
         // Updating the chart with all the new values
         var values = [totalPaidOutputCalc, totalPaidOutputCalcCic];
     
-        // console.log("368", values)
 
-
-        // myChart2.data.datasets.forEach((dataset) => {
-        // dataset.data.push(values);
-        // });
-        
-
-        // console.log("370", myChart2)
-        // myChartComm.data.datasets.push(values);
-        // console.log("Push", values)
- 
         myChartComm.data.datasets[0].data = values;
-        // console.log( myChartComm.data.datasets.data );
-        // console.log( myChartComm.data.datasets );
-
+      
         myChartComm.update();
-        // console.log("Update", values)
 
     })
 })
@@ -651,7 +625,7 @@ function commissionCompany2 () {
 
 
 
-    totalpaidtoxyztest.innerText = "Total Paid to EXP (Capping)"
+    totalpaidtoxyztest.innerText = "Total Paid to Virtual Company"
 
 
     commissionCompany2JS.style.backgroundColor = "#c8102e"
@@ -703,7 +677,7 @@ function commissionCompany3 () {
 
 
 
-    totalpaidtoxyztest.innerText = "Total Paid to EXP (ICON)"
+    totalpaidtoxyztest.innerText = "Total Paid "
 
 
     commissionCompany3JS.style.backgroundColor = "#c8102e"
